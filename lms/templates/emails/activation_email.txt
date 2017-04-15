@@ -1,6 +1,6 @@
 <%! from django.utils.translation import ugettext as _ %>
 <%! from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers %>
-${_("Thank you for creating an account with {platform_name}!").format(
+${_("Hi, \nThank you for creating an account with {platform_name}!").format(
     platform_name=configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME)
 )}
 
