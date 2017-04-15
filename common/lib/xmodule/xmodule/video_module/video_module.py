@@ -201,7 +201,21 @@ class VideoModule(VideoFields, VideoTranscriptsMixin, VideoStudentViewHandlers, 
         track_status = (self.download_track and self.track)
         transcript_download_format = self.transcript_download_format if not track_status else None
         sources = filter(None, self.html5_sources)
-
+        if sources:
+                splitedurl=sources[0].split('/')
+                logging.info("splited URL %s",splitedurl)
+                if "s3" in splitedurl[2]:
+                    conn = boto.connect_s3(aws_access_key_id = 'AKIAIGPR7E2VTHW7BOYA', aws_secret_access_key = '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')
+                    logging.info("connection with s3 %s",conn)
+                    bucket=conn.get_bucket(splitedurl[3])
+                    logging.info("bucket Name %s",bucket)
+                    bucket_key=bucket.get_key(splitedurl[4])
+                    logging.info("bucket key %s",bucket_key)
+                    signed_url=bucket_key.generate_url(900, query_auth=True, force_http=True)
+                    logging.info("signed url %s",signed_url)
+                    signedparseurl='u'+"'"+signed_url+"'"
+                    logging.info("parsed signed url %s",signedparseurl)
+                    sources=[signed_url]
         download_video_link = None
         branding_info = None
         youtube_streams = ""
