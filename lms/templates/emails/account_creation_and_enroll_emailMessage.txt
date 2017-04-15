@@ -11,4 +11,4 @@ ${_("It is recommended that you change your password.")}
 
 ${_("Sincerely yours,"
 ""
-"The {course_name} Team").format(course_name=course.display_name_with_default_escaped)}
+"Team CloudThat eLearning")}
