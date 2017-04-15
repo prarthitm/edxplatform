@@ -38,7 +38,8 @@
             ## can be included in the footer on other sites
             ## (e.g. a blog or marketing front-end) to provide a consistent
             ## user experience.  See the branding app for details.
-            <img alt="organization logo" src="${footer['logo_image']}">
+            <!--img alt="organization logo" src="${footer['logo_image']}"-->
+            <img alt="organization logo" src="https://s3-ap-southeast-1.amazonaws.com/cloudtahatwebsiteassets/236x174px_with_tagline_tm_symbol.png" style="height:80px; width:120px;">
           </a>
         </p>
       </div>
@@ -62,13 +63,13 @@
     ## through an API to partner sites (such as marketing sites or blogs),
     ## which are not technically powered by OpenEdX.
     % if not hide_openedx_link:
-    <div class="footer-about-openedx">
+    <!--div class="footer-about-openedx">
       <p>
         <a href="${footer['openedx_link']['url']}">
           <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140" />
         </a>
       </p>
-    </div>
+    </div-->
     % endif
   </footer>
 </div>
