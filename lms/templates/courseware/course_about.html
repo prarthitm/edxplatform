@@ -16,6 +16,15 @@ from openedx.core.lib.courses import course_image_url
   <meta property="og:description" content="${get_course_about_section(request, course, 'short_description')}" />
 </%block>
 
+<style>
+.course-info header.course-profile{
+        height:350px;
+        padding-top:70px;
+        background-image:url("${course_image_url(course)}");
+        background-position:right;
+}
+</style>
+
 <%block name="js_extra">
   ## CourseTalk widget js script
   % if show_coursetalk_widget:
