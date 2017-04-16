@@ -47,6 +47,8 @@ from .video_handlers import VideoStudentViewHandlers, VideoStudioViewHandlers
 from xmodule.video_module import manage_video_subtitles_save
 from xmodule.mixin import LicenseMixin
 
+import boto
+import boto.s3.connection
 # The following import/except block for edxval is temporary measure until
 # edxval is a proper XBlock Runtime Service.
 #
