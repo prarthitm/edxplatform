@@ -209,7 +209,7 @@ class VideoModule(VideoFields, VideoTranscriptsMixin, VideoStudentViewHandlers, 
                 splitedurl=sources[0].split('/')
                 logging.info("splited URL %s",splitedurl)
                 if "s3" in splitedurl[2]:
-                    conn = boto.connect_s3(aws_access_key_id = 'AKIAIGPR7E2VTHW7BOYA', aws_secret_access_key = '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')
+                    conn = boto.connect_s3()
                     logging.info("connection with s3 %s",conn)
                     bucket=conn.get_bucket(splitedurl[3])
                     logging.info("bucket Name %s",bucket)
